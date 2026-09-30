@@ -33,6 +33,9 @@ function App() {
 
   return (
     <main className="app">
+      <img src="img/scooby-dooby-to-doo-logo.png" 
+      className="logo" 
+      alt="Logga"/>
       <h1>Scooby Dooby To-Doo</h1>
       <form className="input-row" onSubmit={addTodo}>
         <input
@@ -44,14 +47,16 @@ function App() {
       </form>
       <ul className="todo-list">
         {todos.map((t) => (
-          <li className={t.done ? "completed" : "todo"} key={t.id}>
-            <button type="button" onClick={() => toggleDone(t.id)}>
-              {t.done ? "Avmarkera" : "Klar"}
-            </button>{" "}
-            {t.text}{" "}
-            <button type="button" onClick={() => removeTodo(t.id)}>
-              Ta bort
-            </button>
+          <li className="todo" key={t.id}>
+          <span
+          className={t.done ? "completed-text" : ""}
+          onClick={() => toggleDone(t.id)}
+          >
+          {t.text}
+          </span>{" "}
+          <button type="button" onClick={() => removeTodo(t.id)}>
+           Ta bort
+          </button>
           </li>
         ))}
       </ul>

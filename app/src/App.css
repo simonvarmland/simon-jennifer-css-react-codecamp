@@ -1,7 +1,25 @@
+body {
+    background: url("img/scooby-dooby-to-doo-bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+  
+}
+
 .app {
   max-width: 28rem;
   margin: 2rem auto;
   font-family: system-ui, sans-serif;
+}
+
+.logo {
+    max-width:500px;
+}
+
+h1 {
+    text-align: center;
 }
 
 .input-row {
@@ -32,11 +50,19 @@
   gap: 0.5rem;
   align-items: center;
   padding: 0.65rem 0;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #83a0c7;
+}
+
+.completed-text {
+  text-decoration: line-through;
+  cursor: pointer;
 }
 
 .completed { 
   text-decoration: line-through;
   opacity: 0.75;
-  background: #b8965c77;
+  background: #f1f5f9;
+  border-radius: 6rem;
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
 }

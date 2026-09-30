@@ -1,0 +1,43 @@
+.body { 
+    padding: 40; 
+    background-color: antiquewhite;
+}
+
+.app {
+    max-width: 28rem;
+    margin: 2rem auto;
+    font-family: system-ui, sans-serif;
+}
+
+
+.todo {
+    list-style: none;
+    padding: 12;
+    background: #4866b9;
+    margin-bottom: 8;
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 12px;
+    margin: 0 auto 1rem;
+    max-width: 25rem;
+
+}
+
+.completed-text {
+    display: block;
+    color: rgb(27, 1, 60);
+    text-decoration: line-through;
+    font-weight: bold;    
+    
+}    
+
+.header {
+    font-size: 58px; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.list {
+    padding: 0px;
+}
