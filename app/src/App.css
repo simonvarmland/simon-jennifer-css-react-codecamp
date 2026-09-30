@@ -15,6 +15,11 @@
   padding: 0.5rem 0.65rem;
 }
 
+.input-row input:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+}
+
 .todo-list {
   list-style: none;
   padding: 0;
@@ -30,7 +35,8 @@
   border-bottom: 1px solid #e2e8f0;
 }
 
-.completed {
+.completed { 
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.75;
+  background: #b8965c77;
 }
