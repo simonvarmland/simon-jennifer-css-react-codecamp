@@ -31,6 +31,10 @@ function App() {
     setTodos(todos.filter((t) => t.id !== id));
   }
 
+  if (todos.done) {
+    
+  }
+
   return (
     <main className="app">
       <h1>Scooby Dooby To-Doo</h1>
@@ -44,7 +48,7 @@ function App() {
       </form>
       <ul className="todo-list">
         {todos.map((t) => (
-          <li className="todo" key={t.id}>
+          <li className={t.done ? "completed" : "todo"} key={t.id}>
             <button type="button" onClick={() => toggleDone(t.id)}>
               {t.done ? "Avmarkera" : "Klar"}
             </button>{" "}
