@@ -31,10 +31,6 @@ function App() {
     setTodos(todos.filter((t) => t.id !== id));
   }
 
-  if (todos.done) {
-    
-  }
-
   return (
     <main className="app">
       <h1>Scooby Dooby To-Doo</h1>
