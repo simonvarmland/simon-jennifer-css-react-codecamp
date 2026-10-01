@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./App.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -23,12 +25,12 @@ function App() {
 
   function toggleDone(id) {
     setTodos(
-      todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t))
+      todos.map((todo) => (todo.id === id ? { ...todo, done: !todo.done } : todo))
     );
   }
 
   function removeTodo(id) {
-    setTodos(todos.filter((t) => t.id !== id));
+    setTodos(todos.filter((todo) => todo.id !== id));
   }
 
   return (
@@ -36,7 +38,7 @@ function App() {
       <img src="img/scooby-dooby-to-doo-logo.png" 
       className="logo" 
       alt="Logga"/>
-      <h1>Scooby Dooby To-Doo</h1>
+      <section className="todo-card">
       <form className="input-row" onSubmit={addTodo}>
         <input
           value={text}
@@ -46,20 +48,29 @@ function App() {
         <button type="submit">Lägg till</button>
       </form>
       <ul className="todo-list">
-        {todos.map((t) => (
-          <li className="todo" key={t.id}>
+        {todos.map((todo) => (
+          <li className={todo.done ? "todo todo-completed" : "todo"}
+          key={todo.id}>
           <span
-          className={t.done ? "completed-text" : ""}
-          onClick={() => toggleDone(t.id)}
+          className="todo-text"
+          onClick={() => toggleDone(todo.id)}
           >
-          {t.text}
+                  
+          {todo.text}
+        
           </span>{" "}
-          <button type="button" onClick={() => removeTodo(t.id)}>
-           Ta bort
-          </button>
+          <button
+  className="delete-button"
+  type="button"
+  onClick={() => removeTodo(todo.id)}
+  aria-label="Ta bort"
+>
+  <FontAwesomeIcon icon={faTrashCan} />
+</button>
           </li>
         ))}
       </ul>
+      </section>
     </main>
   );
 }
